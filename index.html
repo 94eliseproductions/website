@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>94 Elise Productions — Amy Boland</title>
+  <meta name="description" content="94 Elise Productions — Amy Boland, New York-based independent comedy producer.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="sidebar" aria-label="Main">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#specials">Specials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- 01 HOME -->
+    <section id="home" class="home">
+      <h1>
+        <img src="images/web/logo.png" alt="94 Elise Productions" width="3319" height="1729">
+      </h1>
+    </section>
+
+    <!-- 02 ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <div class="about-body">
+        <img class="headshot" src="images/web/headshot.jpg" alt="Portrait of Amy Boland" loading="lazy">
+        <div class="bio">
+          <p>Amy Boland is a New York-based independent comedy producer and entertainment professional with extensive experience across television, film, and live theater. She has held key development and production roles at industry powerhouses including Scott Rudin Productions, 3 Arts Entertainment, Paramount+/Showtime Networks, and Fox Entertainment.</p>
+          <p>A prolific champion of live comedy, Amy has produced high-profile stage runs, national tours, and comedy specials. Notably, she produced Ruby Karp’s <em>I Don’t Trust Adults</em>, which completed a multi-city US tour before a successful six-week Off-Broadway run at SoHo Playhouse and a filmed special for Veeps, on which Amy served as Executive Producer. Her recent Off-Broadway productions also include Maria DeCotis’ <em>The Power Vested In Me</em> and Tess Tregellas’ <em>EPIC</em>, both currently in post-production as filmed specials.</p>
+          <p>Amy continues to expand her stage repertoire with upcoming projects including Ben Fallaci’s <em>Aquarius Rising</em> and Liz Coin’s <em>Lizzy Sunshine</em>. A staple of the live comedy circuit, she has mounted over a dozen shows for the New York Comedy Festival and produced for the Knockouts Women’s Comedy Festival. On screen, her feature film credits include Jerry Seinfeld’s <em>Unfrosted</em> as assistant to Amy Schumer. Amy is driven by an unwavering commitment to bringing original comedy and groundbreaking theater to life across stage and screen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 SPECIALS -->
+    <section id="specials">
+      <h2>Specials</h2>
+      <div class="posters">
+        <img src="images/web/tess-poster.jpg" alt="EPIC — Tess Tregellas" loading="lazy">
+        <img src="images/web/ruby-poster.jpg" alt="I Don’t Trust Adults — Ruby Karp" loading="lazy">
+        <img src="images/web/lizzy-poster.jpg" alt="Lizzy Sunshine" loading="lazy">
+        <img src="images/web/ben-poster.jpg" alt="Aquarius Rising — Ben Fallaci" loading="lazy">
+        <img src="images/web/maria-poster.jpg" alt="The Power Vested In Me — Maria DeCotis" loading="lazy">
+      </div>
+    </section>
+
+    <!-- 04 CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="subtitle">sign up for my newsletter!</p>
+
+      <!-- Replace YOUR_FORM_ID with a real endpoint (e.g. Formspree, Buttondown, Mailchimp). -->
+      <form class="newsletter" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field">
+          <label for="nl-email">Email</label>
+          <input id="nl-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="nl-msg">Message <span>(optional)</span></label>
+          <textarea id="nl-msg" name="message" rows="4"></textarea>
+        </div>
+        <button type="submit">Sign up</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

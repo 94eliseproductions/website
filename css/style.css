@@ -1,0 +1,209 @@
+/* ---------- Palette (color scheme #1) ---------- */
+:root {
+  --sky:       #4FB9EC;
+  --seafoam:   #7FC4B0;
+  --teal:      #3F9A9D;
+  --green:     #8DBE5C;
+  --raspberry: #C0356C;
+  --pink:      #D93489;
+  --red:       #DB4145;
+  --orange:    #E06B42;
+  --lilac:     #C9A6CD;
+  --purple:    #8F4E98;
+
+  --bg: #000;
+  --text: #fff;
+  --muted: #a8a8a8;
+  --hover: var(--pink);          /* sidebar hover color — swap for any palette color */
+
+  --sidebar-w: 240px;
+  --font: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-w);
+  padding: 64px 0 0 72px;
+  z-index: 10;
+}
+.sidebar ul { list-style: none; margin: 0; padding: 0; }
+.sidebar a {
+  display: inline-block;
+  padding: 2px 0;
+  color: var(--text);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  transition: color .15s ease;
+}
+.sidebar a:hover,
+.sidebar a:focus-visible { color: var(--hover); outline: none; }
+.sidebar a.active { color: var(--hover); }
+
+/* ---------- Layout ---------- */
+main {
+  margin-left: var(--sidebar-w);
+  padding: 0 72px 0 32px;
+}
+
+section {
+  padding: 64px 0 120px;
+  scroll-margin-top: 0;
+}
+
+h2 {
+  margin: 0 0 40px;
+  font-weight: 400;
+  font-size: clamp(56px, 8vw, 104px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+/* ---------- Home ---------- */
+/* Spans the full window (under the sidebar) so the logo centers on the screen,
+   not just in the space to the right of the sidebar. */
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: calc(-1 * (var(--sidebar-w) + 32px));
+  margin-right: -72px;
+  padding: 48px 72px;
+}
+.home h1 { margin: 0; width: 100%; max-width: 1100px; }
+.home img { width: 100%; }
+
+/* Shared column for About + Specials so their edges line up */
+.about-body,
+.posters {
+  max-width: 844px;   /* headshot 360 + gap 64 + bio 420 */
+  margin: 0 auto;
+}
+
+/* ---------- About ---------- */
+.about-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+  align-items: center;
+  justify-content: space-between;
+}
+.headshot {
+  flex: 0 1 360px;
+  width: 360px;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+.bio {
+  flex: 1 1 340px;
+  max-width: 420px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #f2f2f2;
+}
+.bio p { margin: 0 0 16px; }
+
+/* ---------- Specials ---------- */
+.posters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 64px;
+}
+/* "contain" shows each whole poster — no cropping. Posters have slightly
+   different shapes; the leftover space is black, so it disappears on the page. */
+.posters img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+}
+
+/* ---------- Contact / newsletter ---------- */
+.subtitle {
+  margin: 0 0 32px;
+  font-size: 26px;
+  color: var(--sky);
+  text-align: center;
+}
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field label {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.field label span { color: var(--muted); text-transform: none; letter-spacing: 0; }
+.field input,
+.field textarea {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid #8a8a8a;
+  padding: 14px 16px;
+  font: inherit;
+  font-size: 17px;
+  min-height: 48px;
+}
+.field textarea { resize: vertical; }
+.field input:focus,
+.field textarea:focus { outline: none; border-color: var(--hover); }
+
+.newsletter button {
+  align-self: center;
+  background: var(--text);
+  color: var(--bg);
+  border: 0;
+  padding: 14px 32px;
+  min-height: 48px;
+  font: inherit;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.newsletter button:hover,
+.newsletter button:focus-visible { background: var(--hover); color: var(--text); }
+.form-status { margin: 0; min-height: 1.5em; font-size: 18px; text-align: center; }
+
+/* ---------- Phone / small tablet ---------- */
+@media (max-width: 760px) {
+  .sidebar {
+    position: sticky;
+    width: 100%;
+    padding: 16px;
+    background: var(--bg);
+  }
+  .sidebar ul { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  .sidebar a { font-size: 16px; padding: 10px 0; }
+  main { margin-left: 0; padding: 0 16px; }
+  section { padding: 48px 0 72px; scroll-margin-top: 64px; }
+  .home { min-height: 70vh; margin: 0; padding: 32px 0; }
+  .about-body { gap: 32px; justify-content: center; }
+  .posters { gap: 16px; }
+}
